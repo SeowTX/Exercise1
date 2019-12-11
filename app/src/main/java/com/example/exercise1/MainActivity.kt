@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             interest()
             monPayment()
         }
+
+        buttonReset.setOnClickListener(){
+            onClear()
+        }
     }
 
     /*fun carLoan(){
@@ -35,9 +39,13 @@ class MainActivity : AppCompatActivity() {
             var input1 = findViewById<View>(R.id.editTextCarPrice) as EditText
             var input2 = findViewById<View>(R.id.editTextDownPayment) as EditText
             var result1 = findViewById<View>(R.id.textViewLoan) as TextView
+            var final1 = findViewById<View>(R.id.textView) as TextView
             //var button1 = findViewById<View>(R.id.buttonCalculate) as Button
 
-            result1.text= (input1.text.toString().toInt()-input2.text.toString().toInt()).toString()
+
+            result1.text=  (input1.text.toString().toInt()-input2.text.toString().toInt()).toString()
+
+
 
         }
     }
@@ -71,6 +79,26 @@ class MainActivity : AppCompatActivity() {
             result3.text= ((result1.text.toString().toInt()+result2.text.toString().toInt())/input4.text.toString().toInt()/12).toString()
 
         }
+    }
+
+    fun onClear(){
+        var input1 = findViewById<View>(R.id.editTextCarPrice) as EditText
+        var input2 = findViewById<View>(R.id.editTextDownPayment) as EditText
+        var input3 = findViewById<View>(R.id.editTextInterestRate) as EditText
+        var input4 = findViewById<View>(R.id.editTextLoanPeriod) as EditText
+        var result1 = findViewById<View>(R.id.textViewLoan) as TextView
+        var result2 = findViewById<View>(R.id.textViewInterest) as TextView
+        var result3 = findViewById<View>(R.id.textViewMonthlyRepayment) as TextView
+
+        input1.text.clear()
+        input2.text.clear()
+        input3.text.clear()
+        input4.text.clear()
+        result1.text = ""
+        result2.text = ""
+        result3.text = ""
+
+
     }
 
 
